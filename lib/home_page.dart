@@ -1,26 +1,54 @@
 import 'package:blogs_app/details_page.dart';
+import 'package:blogs_app/models/country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
-  List<String> imageOfProducts = [
-    "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2hpcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1519733833087-3b1ceb8d56c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1558961910-90e0503c1064?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHN1biUyMGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1625852043440-f7ed5aff1519?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Ym9keSUyMHNwcmF5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZvcm1hbCUyMHNob2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  final List<Country> countries = [
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1549043671-7545f8c7ca9d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjA3fHxzaGlydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Shirt",
+        description:
+            "Company. Safe Trading B2B. Leading B2B Portal. China’s B2B Impact Award. Quality China Products. SGS Audited Suppliers. Highlights: New User Guide Available, Free App Available, Quotations Available."),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHRzaGlydHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Tshirt",
+        description:
+            "T Shirts Usa, Top Information From Trusted Internet Sources. T Shirts Usa, Get Expert Advice and Curated Content on Searchley. Useful & Relevant. Quick Answers. Explore the Best Info Now. Find All Info You Want. "),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1504117809472-d99bf528ea44?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBhbnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Pant",
+        description:
+            "Pants definition is - an outer garment covering each leg separately and usually extending from the waist to the ankle —often used before another noun ..."),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1508296695146-257a814070b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VuJTIwZ2xhc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Sun Glass",
+        description:
+            "Sunglasses or sun glasses (informally called shades or sunnies; more names below) are a form of protective eyewear designed primarily to prevent bright sunlight and high-energy visible light from damaging or discomforting the eyes."),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1604523412873-4387f249cd90?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9keSUyMHNwcmF5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Body Spray",
+        description:
+            "Body spray is a perfume product, similar to aerosol deodorant, which is intended to be used elsewhere on the body besides the armpits. Body sprays are lighter in strength than cologne, generally less expensive, and double as deodorant."),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Shoes",
+        description:
+            "A shoe is an item of footwear intended to protect and comfort the human foot. Shoes are also used as an item of decoration and fashion. ... Traditionally, shoes have been made from leather, wood or canvas, but are increasingly made from rubber, plastics, and other petrochemical-derived materials."),
+    Country(
+        imageUrl:
+            "https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9ybWFsJTIwc2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        name: "Formal Shoes",
+        description:
+            "A classic style of shoes that defines a class and sophistication, giving the wearer a true and perfect definition of class, elegance and dressing appeal. The sleeker the design, the more formal the shoes look. The most preferred colour being black and brown, these shoes are mainly sold in conservative shades."),
   ];
-  List<String> nameOfProducts = [
-    "Shirt",
-    "TShirt",
-    "Pant",
-    "Sun Glash",
-    "Body Spray",
-    "Shoes",
-    "formal shoes",
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +69,14 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 24),
             Expanded(
                 child: ListView.builder(
-                    itemCount: 7,
+                    itemCount: countries.length,
                     itemBuilder: (BuildContext context, int index) => InkWell(
                           onTap: () {
                             final route = MaterialPageRoute(
                                 builder: (BuildContext context) {
-                              return DetailsPage();
+                              return DetailsPage(
+                                country: countries[index],
+                              );
                             });
                             Navigator.push(context, route);
                           },
@@ -60,7 +90,7 @@ class HomePage extends StatelessWidget {
                                         height: 72,
                                         width: 72,
                                         child: Image.network(
-                                          imageOfProducts[index],
+                                          countries[index].imageUrl,
                                           width:
                                               MediaQuery.of(context).size.width,
                                         )),
@@ -72,17 +102,9 @@ class HomePage extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          nameOfProducts[index],
+                                          countries[index].name,
                                           style: TextStyle(
                                             fontSize: 30,
-                                          ),
-                                        ),
-                                        SizedBox(height: 5),
-                                        Text(
-                                          'Make design system people want to use.',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14,
                                           ),
                                         ),
                                       ],

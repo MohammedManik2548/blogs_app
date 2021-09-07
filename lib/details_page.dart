@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'models/country_model.dart';
+
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  final Country country;
+
+  const DetailsPage({Key? key, required this.country}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,14 @@ class DetailsPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text('Detais'),
+          Image.network(
+            country.imageUrl,
+          ),
+          SizedBox(height: 10),
+          Text(
+            country.description,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );
